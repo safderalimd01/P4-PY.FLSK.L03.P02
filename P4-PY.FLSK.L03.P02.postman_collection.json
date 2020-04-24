@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "a0a38c30-4bf6-4fc0-8106-e4a188254d5e",
+		"name": "P4-PY.FLSK.L03.P02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/product-list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "product_id",
+						"value": "18",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/product?",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_name\": \"blockchan Fundamentals\",\n\t\"product_status\": 1\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product"
+					],
+					"query": [
+						{
+							"key": "active",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "product_name",
+							"value": "APIs for Dummies",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\" : 19,\n\t\"product_name\": \"blockchain tansy fundamentals\",\n\t\"product_status\": 1\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product"
+					],
+					"query": [
+						{
+							"key": "active",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "product_name",
+							"value": "APIs for Dummies",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "product_id",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "18"
+					},
+					{
+						"key": "Content-Type",
+						"value": "18"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/product",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product"
+					],
+					"query": [
+						{
+							"key": "active",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "product_name",
+							"value": "APIs for Dummies",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
