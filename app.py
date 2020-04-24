@@ -3,6 +3,7 @@ from flask_restful import Api
 from flask_cors import CORS
 
 from resources.product.product_routes import initialize_product_routes
+from resources.client.client_routes import initialize_client_routes
 
 
 app = Flask(__name__)
@@ -11,6 +12,7 @@ api = Api(app)
 
 # Route
 initialize_product_routes(api)
+initialize_client_routes(api)
 
 if __name__ == "__main__":
     app.run(debug=False)

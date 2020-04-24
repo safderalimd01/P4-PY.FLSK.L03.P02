@@ -6,213 +6,432 @@
 	},
 	"item": [
 		{
-			"name": "product List",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/product-list",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"product-list"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "product Details",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "product_id",
-						"value": "18",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/product?",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"product"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "save Product",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"product_name\": \"blockchan Fundamentals\",\n\t\"product_status\": 1\n}\n"
-				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/product",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"product"
-					],
-					"query": [
-						{
-							"key": "active",
-							"value": "1",
-							"disabled": true
+			"name": "Products",
+			"item": [
+				{
+					"name": "product List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
 						},
-						{
-							"key": "product_name",
-							"value": "APIs for Dummies",
-							"disabled": true
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product-list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product-list"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Product",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"product_id\" : 19,\n\t\"product_name\": \"blockchain tansy fundamentals\",\n\t\"product_status\": 1\n}\n"
-				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/product",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"product"
-					],
-					"query": [
-						{
-							"key": "active",
-							"value": "1",
-							"disabled": true
-						},
-						{
-							"key": "product_name",
-							"value": "APIs for Dummies",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Product",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "product_id",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "18"
 					},
-					{
-						"key": "Content-Type",
-						"value": "18"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/product",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"product"
-					],
-					"query": [
-						{
-							"key": "active",
-							"value": "1",
-							"disabled": true
+				{
+					"name": "product Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "product_id",
+								"value": "18",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
 						},
-						{
-							"key": "product_name",
-							"value": "APIs for Dummies",
-							"disabled": true
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product?",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "save Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_name\": \"blockchan Fundamentals\",\n\t\"product_status\": 1\n}\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "APIs for Dummies",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_id\" : 19,\n\t\"product_name\": \"blockchain tansy fundamentals\",\n\t\"product_status\": 1\n}\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "APIs for Dummies",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "product_id",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "18"
+							},
+							{
+								"key": "Content-Type",
+								"value": "18"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "APIs for Dummies",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Client List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/client-list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/client?",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_name\": \"Safder Ali\",\n\t\"client_status\": 1,\n\t\"mobile_phone\": \"8801933344\",\n\t\"email_address\": \"ceo@tansycloud.com\",\n\t\"city\": \"KZPT\"\n}\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/client",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "APIs for Dummies",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\" : 4,\n\t\"client_name\": \"Safder Ali MD\",\n\t\"client_status\": 1,\n\t\"mobile_phone\": \"+918801933344\",\n\t\"email_address\": \"ceo@tansycloud.com\",\n\t\"city\": \"KZPT, HYD\"\n}\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/client",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "APIs for Dummies",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "client_id",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "4"
+							},
+							{
+								"key": "Content-Type",
+								"value": "4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/client",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "APIs for Dummies",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
