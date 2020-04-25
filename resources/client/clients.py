@@ -3,13 +3,20 @@ from flask import request
 
 from resources.utility.config import connect_db
 from resources.utility.utils import api_success, api_failure, close_connection
-
+import os
+import mysql.connector
 
 class ClsClient(Resource):
 
     def get(self):
         try:
-            conn = connect_db()
+            config = {
+                'user': os.environ.get('user'),
+                'password': os.environ.get('password'),
+                'host': os.environ.get('host'),
+                'database': os.environ.get('database')
+            }
+            conn = mysql.connector.connect(**config)
             client_id = int(request.headers.get('client_id'))
             if not isinstance(conn, str):
                 cursor = conn.cursor(dictionary=True)
