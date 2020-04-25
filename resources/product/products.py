@@ -4,12 +4,21 @@ from flask import request
 from resources.utility.config import connect_db
 from resources.utility.utils import api_success, api_failure, close_connection
 
+import os
+import mysql.connector
+
+config = {
+    'user': os.environ.get('user'),
+    'password': os.environ.get('password'),
+    'host': os.environ.get('host'),
+    'database': os.environ.get('database')
+}
 
 class ClsProduct(Resource):
 
     def get(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             product_id = int(request.headers.get('product_id'))
             if not isinstance(conn, str):
                 cursor = conn.cursor(dictionary=True)
@@ -28,7 +37,7 @@ class ClsProduct(Resource):
 
     def post(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             _json = request.json
             _product_name = _json['product_name']
             _product_status = _json['product_status']
@@ -50,7 +59,7 @@ class ClsProduct(Resource):
 
     def put(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             _json = request.json
             _product_id = _json['product_id']
             _product_name = _json['product_name']
@@ -73,7 +82,7 @@ class ClsProduct(Resource):
 
     def delete(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             _product_id = int(request.headers.get('product_id'))
             if not isinstance(conn, str):
                 cursor = conn.cursor(dictionary=True)

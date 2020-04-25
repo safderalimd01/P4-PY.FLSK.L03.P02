@@ -1,21 +1,20 @@
 from flask_restful import Resource
 from flask import request
 
-from resources.utility.config import connect_db
 from resources.utility.utils import api_success, api_failure, close_connection
 import os
 import mysql.connector
 
-class ClsClient(Resource):
+config = {
+    'user': os.environ.get('user'),
+    'password': os.environ.get('password'),
+    'host': os.environ.get('host'),
+    'database': os.environ.get('database')
+}
 
+class ClsClient(Resource):
     def get(self):
         try:
-            config = {
-                'user': os.environ.get('user'),
-                'password': os.environ.get('password'),
-                'host': os.environ.get('host'),
-                'database': os.environ.get('database')
-            }
             conn = mysql.connector.connect(**config)
             client_id = int(request.headers.get('client_id'))
             if not isinstance(conn, str):
@@ -35,7 +34,7 @@ class ClsClient(Resource):
 
     def post(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             _json = request.json
             _client_name = _json['client_name']
             _client_status = _json['client_status']
@@ -60,7 +59,7 @@ class ClsClient(Resource):
 
     def put(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             _json = request.json
             _client_id = _json['client_id']
             _client_name = _json['client_name']
@@ -86,7 +85,7 @@ class ClsClient(Resource):
 
     def delete(self):
         try:
-            conn = connect_db()
+            conn = mysql.connector.connect(**config)
             _client_id = int(request.headers.get('client_id'))
             if not isinstance(conn, str):
                 cursor = conn.cursor(dictionary=True)
