@@ -1,20 +1,22 @@
 from flask_restful import Resource
 from flask import request
 
-from resources.utility.config import db_connect, app
 from resources.utility.utils import api_success, api_failure, close_connection
-from flask_jwt_extended import jwt_required
+import os
+import mysql.connector
 
+config = {
+    'user': os.environ.get('user'),
+    'password': os.environ.get('password'),
+    'host': os.environ.get('host'),
+    'database': os.environ.get('database')
+}
 
 class ClsClient(Resource):
-
-    @jwt_required
     def get(self):
         try:
-            db = db_connect()
-            conn = db.connect()
-            cursor = conn.cursor()
-
+            conn = mysql.connector.connect(**config)
+            cursor = conn.cursor(dictionary=True)
             client_id = int(request.headers.get('client_id'))
             cursor.execute("SELECT count(*) FROM client WHERE client_id=%s", (client_id,))
             check_record_exist = cursor.fetchone().get('count(*)')
@@ -34,13 +36,10 @@ class ClsClient(Resource):
         except Exception as error:
             return api_failure(str(error))
 
-    @jwt_required
+
     def post(self):
         try:
-            db = db_connect()
-            conn = db.connect()
-            cursor = conn.cursor()
-
+            conn = mysql.connector.connect(**config)
             _json = request.json
             _client_name = _json['client_name']
             _client_status = _json['client_status']
@@ -48,6 +47,7 @@ class ClsClient(Resource):
             _email_address = _json['email_address']
             _city = _json['city']
             if not isinstance(conn, str):
+                cursor = conn.cursor(dictionary=True)
                 query = "INSERT INTO client(client_name, client_status, mobile_phone, email_address, city) VALUES(%s, %s, %s, %s, %s)"
                 bindData = (_client_name, _client_status, _mobile_phone, _email_address, _city)
                 cursor = conn.cursor()
@@ -62,13 +62,10 @@ class ClsClient(Resource):
             return api_failure(str(error))
 
 
-    @jwt_required
     def put(self):
         try:
-            db = db_connect()
-            conn = db.connect()
-            cursor = conn.cursor()
-
+            conn = mysql.connector.connect(**config)
+            cursor = conn.cursor(dictionary=True)
             _json = request.json
             _client_id = _json['client_id']
             _client_name = _json['client_name']
@@ -97,13 +94,10 @@ class ClsClient(Resource):
             return api_failure(str(error))
 
 
-    @jwt_required
     def delete(self):
         try:
-            db = db_connect()
-            conn = db.connect()
-            cursor = conn.cursor()
-            
+            conn = mysql.connector.connect(**config)
+            cursor = conn.cursor(dictionary=True)
             _client_id = int(request.headers.get('client_id'))
             cursor.execute("SELECT count(*) FROM client WHERE client_id=%s", (_client_id,))
             check_record_exist = cursor.fetchone().get('count(*)')

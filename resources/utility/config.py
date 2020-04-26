@@ -1,17 +1,16 @@
-from flaskext.mysql import MySQL
-from pymysql.cursors import DictCursor
-import pymysql
+import mysql.connector
 
-import os
-from flask import Flask, request
 
-app = Flask(__name__)
+def connect_db():
+    try:
+        config = {
+            'user': 'root',
+            'password': 'Arun@123',
+            'host': 'localhost',
+            'database': 'tansy_cloud'
+        }
 
-def db_connect():
-    mysql = MySQL(cursorclass=DictCursor)
-    app.config['MYSQL_DATABASE_HOST'] = os.environ.get('host')
-    app.config['MYSQL_DATABASE_DB'] = os.environ.get('database')
-    app.config['MYSQL_DATABASE_USER'] = os.environ.get('user')
-    app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('password')
-    mysql.init_app(app)
-    return mysql
+        connection = mysql.connector.connect(**config)
+        return connection
+    except mysql.connector.Error as error:
+        return str(error)
