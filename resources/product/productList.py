@@ -1,36 +1,25 @@
 from flask_restful import Resource
 from flask import request
 
-from resources.utility.config import connect_db
+from resources.utility.config import db_connect, app
 from resources.utility.utils import api_success, api_failure, close_connection
+from flask_jwt_extended import jwt_required
 
-import os
-import mysql.connector
-
-config = {
-    'user': os.environ.get('user'),
-    'password': os.environ.get('password'),
-    'host': os.environ.get('host'),
-    'database': os.environ.get('database')
-}
 
 class ClsProductList(Resource):
 
+    @jwt_required
     def get(self):
         try:
-            conn = mysql.connector.connect(**config)
+            db = db_connect()
+            conn = db.connect()
+            cursor = conn.cursor()
+
             if not isinstance(conn, str):
-                cursor = conn.cursor(dictionary=True)
                 cursor.execute("SELECT product_id, product_name, product_status FROM product")
                 productRows = cursor.fetchall()
                 close_connection(conn, cursor)
-
-                results = []
-
-                for result in productRows:
-                    results.append(result)
-
-                return api_success(results, "Products lists fetched successfully")
+                return api_success(productRows, "Products lists fetched successfully")
             else:
                 return api_failure(str(conn))
         except Exception as error:
