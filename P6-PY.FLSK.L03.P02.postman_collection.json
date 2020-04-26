@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "a0a38c30-4bf6-4fc0-8106-e4a188254d5e",
-		"name": "P4-PY.FLSK.L03.P02",
+		"_postman_id": "2f0695d0-075d-4610-b8b9-3c0f463ddcbb",
+		"name": "P6-PY.FLSK.L03.P02",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,7 +12,13 @@
 					"name": "product List",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
@@ -42,7 +48,12 @@
 						"header": [
 							{
 								"key": "product_id",
-								"value": "18",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
 								"type": "text"
 							}
 						],
@@ -84,6 +95,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
 								"type": "text"
 							}
 						],
@@ -131,11 +147,16 @@
 								"name": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"product_id\" : 19,\n\t\"product_name\": \"blockchain tansy fundamentals\",\n\t\"product_status\": 1\n}\n"
+							"raw": "{\n\t\"product_id\" : 7,\n\t\"product_name\": \"Wings of fire by apj abdul kalam\",\n\t\"product_status\": 1\n}\n"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/api/product",
@@ -176,11 +197,16 @@
 								"key": "product_id",
 								"name": "Content-Type",
 								"type": "text",
-								"value": "18"
+								"value": "7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
+								"type": "text"
 							},
 							{
 								"key": "Content-Type",
-								"value": "18"
+								"value": "7"
 							}
 						],
 						"body": {
@@ -226,7 +252,13 @@
 					"name": "Client List",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4OTAyMDAsIm5iZiI6MTU4Nzg5MDIwMCwianRpIjoiNmM2YzI4ZGUtZTQxNS00MjkxLWFhOTUtMTlkN2UwZjE1OWFmIiwiZXhwIjoxNTg3ODkxMTAwLCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.E6JKITK4i2mTxj92eE1saJQwvHbwNOpC3QLDm3OIRF8",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
@@ -244,6 +276,13 @@
 							"path": [
 								"api",
 								"client-list"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -256,7 +295,12 @@
 						"header": [
 							{
 								"key": "client_id",
-								"value": "3",
+								"value": "5",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
 								"type": "text"
 							}
 						],
@@ -298,6 +342,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
 								"type": "text"
 							}
 						],
@@ -345,11 +394,16 @@
 								"name": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4ODkyNjcsIm5iZiI6MTU4Nzg4OTI2NywianRpIjoiNjIxYWMwZWYtOWQ4NC00MWRjLTg4OGYtM2MzNDcyZDUyZDc0IiwiZXhwIjoxNTg3ODkwMTY3LCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.azhn5DKO-FMpRBaVeHg6Yn_sj0iql2oVW2qZsA7HW9A",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"client_id\" : 4,\n\t\"client_name\": \"Safder Ali MD\",\n\t\"client_status\": 1,\n\t\"mobile_phone\": \"+918801933344\",\n\t\"email_address\": \"ceo@tansycloud.com\",\n\t\"city\": \"KZPT, HYD\"\n}\n"
+							"raw": "{\n\t\"client_id\" : 6,\n\t\"client_name\": \"Safder Ali md\",\n\t\"client_status\": 1,\n\t\"mobile_phone\": \"+918801933344\",\n\t\"email_address\": \"ceo@tansycloud.com\",\n\t\"city\": \"KZPT HYD\"\n}\n"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/api/client",
@@ -367,13 +421,13 @@
 							],
 							"query": [
 								{
-									"key": "active",
-									"value": "1",
+									"key": "",
+									"value": "",
 									"disabled": true
 								},
 								{
-									"key": "product_name",
-									"value": "APIs for Dummies",
+									"key": "",
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -390,11 +444,16 @@
 								"key": "client_id",
 								"name": "Content-Type",
 								"type": "text",
-								"value": "4"
+								"value": "5"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc4OTAyMDAsIm5iZiI6MTU4Nzg5MDIwMCwianRpIjoiNmM2YzI4ZGUtZTQxNS00MjkxLWFhOTUtMTlkN2UwZjE1OWFmIiwiZXhwIjoxNTg3ODkxMTAwLCJpZGVudGl0eSI6Imt1bWFyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.E6JKITK4i2mTxj92eE1saJQwvHbwNOpC3QLDm3OIRF8",
+								"type": "text"
 							},
 							{
 								"key": "Content-Type",
-								"value": "4"
+								"value": "5"
 							}
 						],
 						"body": {
@@ -417,15 +476,54 @@
 							],
 							"query": [
 								{
-									"key": "active",
-									"value": "1",
+									"key": "",
+									"value": "",
 									"disabled": true
 								},
 								{
-									"key": "product_name",
-									"value": "APIs for Dummies",
+									"key": "",
+									"value": "",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/api/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"kumar\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
 							]
 						}
 					},
